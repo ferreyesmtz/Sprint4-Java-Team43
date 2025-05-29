@@ -3,6 +3,7 @@ class AutomationController {
 
     private AutomationController() { }
 
+    // Se agrego synchronized
     public static synchronized AutomationController getInstance() {
         if (instance == null) {
             instance = new AutomationController();
@@ -26,6 +27,7 @@ class LightSource {
         this.status = config.status;
     }
 
+    // Inicializar las variables 
     public static class Configurator {
         private String hue;
         private int level = 0; // Valor predeterminado
@@ -64,15 +66,17 @@ class HomeSystemFacade {
     private final AutomationController controller;
     private LightSource light;
 
+    // Agregamos un metodo fachada y quitamos el HomeSystem
+    // la parte de la luz la movimos a otro metodo
     public HomeSystemFacade() {
         this.controller = AutomationController.getInstance();
     }
 
     public void setupLighting(String hue, int level, String status) {
         this.light = new LightSource.Configurator(hue)
-                .setLevel(level)
-                .setStatus(status)
-                .build();
+                        .setLevel(level)
+                        .setStatus(status)
+                        .build();
     }
 
     public void activateSystem() {
@@ -83,7 +87,7 @@ class HomeSystemFacade {
 
 public class HomeAutomationApp {
     public static void main(String[] args) {
-        HomeSystemFacade home = new HomeSystemFacade(); // 🏠 Usamos el facade para simplificar
+        HomeSystemFacade home = new HomeSystemFacade();
         home.setupLighting("White", 75, "ON");
         home.activateSystem();
     }
