@@ -15,7 +15,7 @@ Mejorar la estructura del código de un sistema de automatización del hogar med
 ---
 
 ### 2. Builder (LightSource)
-- **Qué se hizo:** Se mantuvo e integró adecuadamente el patrón Builder con valores por defecto (`level = 0`, `status = OFF`) y mejoras en el `toString()`.
+- **Qué se hizo:** Se mantuvo e integró adecuadamente el patrón Builder con valores por defecto (`level = 0`, `status = OFF`).
 - **Por qué:** Este patrón es ideal para crear objetos complejos como `LightSource` de forma clara y fluida, especialmente con múltiples parámetros opcionales.
 
 ---
@@ -31,7 +31,7 @@ Mejorar la estructura del código de un sistema de automatización del hogar med
 - ✔ Mayor cohesión y menor acoplamiento.
 - ✔ Código más intuitivo y organizado.
 - ✔ Fácil de extender para agregar nuevos dispositivos (ej. termostatos, cámaras, etc.).
-- ✔ Claridad en la lógica de negocio gracias al patrón Facade.
+- ✔ Claridad en la lógica gracias al patrón Facade.
 - ✔ Seguridad y robustez mejoradas con el Singleton thread-safe.
 
 ---
@@ -41,6 +41,7 @@ Mejorar la estructura del código de un sistema de automatización del hogar med
 - Integrar más dispositivos al sistema usando el mismo patrón `Builder`.
 - Ampliar el `Facade` con nuevos métodos para controlar múltiples dispositivos.
 - Implementar patrones adicionales como Observer si se requiere respuesta en tiempo real.
+- Dividir cada clase en su propio archivo para sistemas más robustos.
 
 ---
 
